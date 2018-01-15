@@ -1,7 +1,7 @@
 /**
  * University of Pittsburgh
  * Department of Computer Science
- * CS1645: Introduction to HPC Systems
+ * CS1645: Introduction to HPC Systems Spring 2017
  * Instructor Bryan Mills, PhD
  * Student: 
  * Implement Pthreads version of Strassen algorithm for matrix multiplication.
@@ -34,7 +34,7 @@ void simpleMM(int N) {
   }
 }
 
-// WRITE YOUR CODE HERE, you will need to also add functions for each
+// WRITE CODE HERE, you will need to also add functions for each
 // of the sub-matrixes you will need to calculate but you can create your
 // threads in this fucntion.
 void strassenMM(int N) {

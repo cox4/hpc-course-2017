@@ -1,7 +1,7 @@
 /**
  * University of Pittsburgh
  * Department of Computer Science
- * CS1645: Introduction to HPC Systems
+ * CS1645: Introduction to HPC Systems Spring of 2017
  * Instructor Bryan Mills, PhD
  * Student: 
  * Implement Pthreads version of trapezoidal approximation.
@@ -11,6 +11,8 @@
 #include "timer.h"
 #include <pthread.h>
 
+// Update thread count here, currently implementation is not
+// threadsafe. Go ahead see what happens if you change this > 1.
 #define NUM_THREADS 1
 
 // Global variables to make coverting to pthreads easier :)
@@ -36,15 +38,15 @@ double f(double a) {
 void* trap_loop(void *rank) {
   int *rank_int_ptr = (int*) rank;
   int my_rank = *rank_int_ptr;
-  double x_i;
+  double local_x_i;
   double h = (b-a) / n;
   int step = n / NUM_THREADS;
   int start = step * my_rank;
   int end = step * (my_rank + 1) -1;
 
   for(int i = start; i < end; i++) {
-    x_i = a + i*h;
-    approx = approx + f(x_i);
+    local_x_i = a + i*h;
+    approx = approx + f(local_x_i);
   }
   return NULL;
 }
