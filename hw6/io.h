@@ -13,8 +13,8 @@
 int readMatrixFile(int **matrix, int N, char *filename){
 
   FILE *ifp, *ofp;
-  char *mode = "r";
-  ifp = fopen(filename, mode);
+  char mode = 'r';
+  ifp = fopen(filename, &mode);
 
   if (ifp == NULL) {
     fprintf(stderr, "Can't open input file in.list!\n");
