@@ -36,6 +36,10 @@ int main(void) {
    h = (b-a)/n;          /* h is the same for all processes */
    local_n = n/comm_sz;  /* So is the number of trapezoids  */
 
+   /* STUDENTS: part (e) asks you to modify local_n, local_a, and
+      local_b so you can handle the case when n is not evenly
+      divisable by comm_sz */
+
    /* Length of each process' interval of
     * integration = local_n*h.  So my interval
     * starts at: */
@@ -43,9 +47,9 @@ int main(void) {
    local_b = local_a + local_n*h;
    local_int = Trap(local_a, local_b, local_n, h);
 
-   /* Add up the integrals calculated by each process    */
-   /* STUDENTS: This is where you need to have rank 0    */
-   /*           gather all the local_int's and sum them. */
+   /* STUDENTS: Part (a-c) Asks you to implement code such that rank 0
+   /*           gathers all the local_int's and sum them. Including
+		the local_int from rank 0. Do that work here <-> */
 
    /* Hint: For this homework just use Send/Recv */
 
