@@ -47,6 +47,8 @@ int main(void) {
    /* STUDENTS: This is where you need to have rank 0    */
    /*           gather all the local_int's and sum them. */
 
+   /* Hint: For this homework just use Send/Recv */
+
    /* Print the result */
    if (my_rank == 0) {
       printf("With n = %d trapezoids, our estimate\n", n);
