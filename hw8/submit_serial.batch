@@ -7,4 +7,4 @@
 #SBATCH -t 00:05:00                       # Run time (hh:mm:ss) - 5 minutes
 #SBATCH -A TG-CIE180002
 
-./particles_serial 1000000
+./particles_serial 496 test_particles_1.txt

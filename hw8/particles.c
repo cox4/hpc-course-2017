@@ -252,8 +252,9 @@ int read_file(struct Particle *set, int size, char *file_name){
     return 1;
   }
 
+  int i=0;
   // reading particle values
-  for(int i=0; i<size; i++){
+  for(i=0; i<size; i++){
     fscanf(ifp, "%f\t%f\t%f", &set[i].x, &set[i].y, &set[i].mass);
     set[i].fx = 0.0;
     set[i].fy = 0.0;
